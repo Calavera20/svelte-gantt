@@ -39,6 +39,7 @@ promise = promise.then(() => rollup.rollup({
         commonjs(),
         typescript({ 
             useTsconfigDeclarationDir: true,
+            objectHashIgnoreUnknownHack: true,
             tsconfigOverride: { 
                 compilerOptions: {
                     declarationDir: `${outputDir}/types`,  
