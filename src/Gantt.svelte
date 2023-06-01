@@ -366,11 +366,20 @@
 
                 const scale = options.minWidth / $_width;
                 const node = mainContainer;
+                console.log(scale)
+                console.log(node)
+                console.log(node.scrollLeft)
+                console.log(node.clientWidth)
+                console.log(node.scrollWidth)
+                
                 const mousepos = getRelativePos(node, event);
-                const before = node.scrollLeft + mousepos.x;
-                const after = before * scale;
-                const scrollLeft = after - mousepos.x + node.clientWidth / 2;
+                console.log(mousepos)
+                const before = node.scrollLeft;
+                const after = (before+mousepos.x)*scale - node.clientWidth / 2;
 
+                const scrollLeft = after ;
+                // - mousepos.x + node.clientWidth / 2;
+                // const scrollLeft = before*(node.scrollWidth/node.scrollLeft) + node.clientWidth/2;
                 console.log('scrollLeft', scrollLeft);
 
                 columnUnit = options.columnUnit;

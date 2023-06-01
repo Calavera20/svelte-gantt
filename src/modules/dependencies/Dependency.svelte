@@ -17,7 +17,7 @@
 </script>
 
 <div class="sg-dependency" style="left:0;top:0" data-dependency-id="{id}">
-    <Arrow startX={fromTask.left + 0.9*fromTask.width} startY={fromTask.top } endX={toTask.left + 0.1*toTask.width}
+    <Arrow startX={fromTask.left + fromTask.width + (fromTask.width<20? -(fromTask.width/2) :-10) } startY={fromTask.top } endX={toTask.left  + (toTask.width<20? (toTask.width/2) :10)}
         endY={toTask.top  } {stroke} {strokeWidth} />
 </div>
 
