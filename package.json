@@ -61,7 +61,8 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.14"
+    "sirv-cli": "^1.0.14",
+    "svg-round-corners": "^0.4.1"
   },
   "homepage": "https://github.com/ANovokmet/svelte-gantt#readme",
   "directories": {

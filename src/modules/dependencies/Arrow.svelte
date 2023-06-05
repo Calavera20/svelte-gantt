@@ -1,6 +1,8 @@
-<script lang="ts">
-    import { onMount } from 'svelte';
 
+<script  lang="ts">
+    
+    import { onMount } from 'svelte';
+    import { parsePath, roundCommands, roundCorners } from 'svg-round-corners';
     export let startY;
     export let endY;
     export let endX;
@@ -9,7 +11,6 @@
     export let arrowSize = 5;
     export let stroke = 'red';
     export let strokeWidth = 2;
-
     onMount(() => {
 
     });
@@ -45,6 +46,8 @@
         
         
         `L ${endX } ${endY - 10} L ${endX} ${endY  -2}`
+
+        path = roundCorners(path,6,2).path;
     }
 
     let arrowPath;
@@ -56,7 +59,7 @@
     }
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" class="arrow" height="100%" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" class="arrow" height="100%" width="100%">
     <path d="{path}" {stroke} stroke-width="{strokeWidth}" fill="transparent" class="select-area" />
     <path class="path-arrow" d="{arrowPath}" fill="{stroke}" />
 </svg>

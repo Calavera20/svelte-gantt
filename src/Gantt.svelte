@@ -668,7 +668,7 @@
     <Resizer x={tableWidth} on:resize="{onResize}" container={ganttElement}></Resizer>
     {/each}
 
-    <div class="sg-timeline sg-view">
+    <div class="sg-timeline sg-view zoomLevel-{zoomLevel}">
         <div class="sg-header" bind:this={mainHeaderContainer} bind:clientHeight="{$headerHeight}">
             <div class="sg-header-scroller" use:horizontalScrollListener>
                 <div class="header-container" style="width:{$_width}px">
