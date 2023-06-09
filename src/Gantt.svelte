@@ -567,21 +567,17 @@
             behavior: scrollBehavior
         };
 
-        if(targetLeft < scrollLeft) {
-            options.left = targetLeft;
-        }
+      
+            options.left = targetLeft 
+            // + task.width - clientWidth;
 
-        if(targetLeft > scrollLeft + clientWidth) {
-            options.left = targetLeft + task.width - clientWidth;
-        }
+        // if(targetTop < scrollTop) {
+        //     options.top = targetTop;
+        // }
 
-        if(targetTop < scrollTop) {
-            options.top = targetTop;
-        }
-
-        if(targetTop > scrollTop + clientHeight) {
-            options.top = targetTop + rowHeight - clientHeight;
-        }
+        // if(targetTop > scrollTop + clientHeight) {
+        //     options.top = targetTop + rowHeight - clientHeight;
+        // }
         
         mainContainer.scrollTo(options);
     }
