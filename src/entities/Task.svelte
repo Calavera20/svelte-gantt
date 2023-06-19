@@ -284,11 +284,11 @@
         }
     
         function taskElement(node, model) {
-            if(node && node.getBoundingClientRect().x == 0 && node.getBoundingClientRect().width == 0){
+            if(node &&  node !=null && node.getBoundingClientRect().x == 0 && node.getBoundingClientRect().width == 0){
                 node = <HTMLElement> document.querySelector('[data-task-id="'+node.dataset.taskId+'"]')
-                console.log('NODE AFTER', node, node.getBoundingClientRect())
+
             }
-            if(taskElementHook) {
+            if(node &&  node !=null && taskElementHook) {
                 return taskElementHook(node, model);
             }
         }
