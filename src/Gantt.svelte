@@ -270,19 +270,19 @@
 
         mounted = true;
     });
-
-    onDelegatedEvent('mousedown', 'data-task-id', (event, data, target) => {
-        const taskId = +data;
-        if(isLeftClick(event) && !target.classList.contains("sg-task-reflected")){
-            if (event.ctrlKey) {
-                selectionManager.toggleSelection(taskId, target);
-            } else {
-                selectionManager.selectSingle(taskId, target);
-            }
-            selectionManager.dispatchSelectionEvent(taskId, event)
-        }
-        api['tasks'].raise.select($taskStore.entities[taskId]);
-    });
+//Disable task select
+    // onDelegatedEvent('mousedown', 'data-task-id', (event, data, target) => {
+    //     const taskId = +data;
+    //     if(isLeftClick(event) && !target.classList.contains("sg-task-reflected")){
+    //         if (event.ctrlKey) {
+    //             selectionManager.toggleSelection(taskId, target);
+    //         } else {
+    //             selectionManager.selectSingle(taskId, target);
+    //         }
+    //         selectionManager.dispatchSelectionEvent(taskId, event)
+    //     }
+    //     api['tasks'].raise.select($taskStore.entities[taskId]);
+    // });
 
     onDelegatedEvent('mouseover', 'data-row-id', (event, data, target) => {
         $hoveredRow = +data;
